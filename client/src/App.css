@@ -14,7 +14,7 @@
 /* inventar */
 .inventary {
   display:flex;
-  /* margin:0.2em; */
+  font-weight: 700;
   font-size:1.3rem;
   padding:0.1em;
   border-bottom:1px solid black;
@@ -29,8 +29,8 @@
 .add {
   border:none;
   background-image: url(./images/plus.png);
-  height: 2em;
-  width: 2em;
+  height: 2.5em;
+  width: 2.5em;
   background-color: inherit;
   background-size:cover;
   margin: 0.1em 0.6em;
@@ -38,10 +38,10 @@
 }
 
 .substract {
-  background-image: url(./images/minus.png);
+  background-image: url(./images/minus.png);  
   background-size:cover;
-  height: 2em;
-  width: 2em;
+  height: 2.5em;
+  width: 2.5em;
   margin: 0.1em 0.6em;
   background-color: inherit;
   border:none;
@@ -71,3 +71,10 @@
   padding: 0.4em;
 }
 
+.inventary:nth-child(odd) {
+  background: rgba(142, 218, 207, 0.74)
+}
+
+.inventary:nth-child(even) {
+  background: #28D6C0
+}

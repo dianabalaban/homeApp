@@ -34,3 +34,4 @@ mongoose.connect(db, { useNewUrlParser: true, useCreateIndex: true })
   .catch(err => console.log(err));
 
  app.use('/products', require('./routes/products'))
+ app.use('/addremoveproducts', require('./routes/addremoveproducts'))
