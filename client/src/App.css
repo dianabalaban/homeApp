@@ -1,0 +1,71 @@
+.Landing {
+  display:flex;
+  flex-direction:column;
+  height:100vh;  
+}
+
+.firstPage {
+  flex-basis: 45%;
+  text-align:center;
+  padding:1em;
+  font-size:3rem;
+}
+
+/* inventar */
+.inventary {
+  display:flex;
+  /* margin:0.2em; */
+  font-size:1.3rem;
+  padding:0.1em;
+  border-bottom:1px solid black;
+  justify-content: space-between;
+}
+
+.invElement {
+  margin-right:0.2em;
+}
+
+.add {
+  border:none;
+  background-image: url(./images/plus.png);
+  height: 2em;
+  width: 2em;
+  background-color: inherit;
+  background-size:cover;
+  margin: 0.1em 0.2em;
+  
+}
+
+.substract {
+  background-image: url(./images/minus.png);
+  background-size:cover;
+  height: 2em;
+  width: 2em;
+  margin: 0.1em 0.2em;
+  background-color: inherit;
+  border:none;
+}
+
+.quantity {
+  font-size:1.5rem;
+}
+
+.remove {
+  background-image: url(./images/delete.png);
+  background-size:cover;
+  height: 30px;
+  width: 30px;
+  margin: 0.1em 0.2em;
+  background-color: inherit;
+  border:none;
+
+}
+
+.buttonsWrapper{
+  border:1px solid black;
+  display:flex;
+  max-width:35%;
+  flex-direction:row;
+  justify-content: space-between
+}
+
