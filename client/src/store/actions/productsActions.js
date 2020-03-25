@@ -1,9 +1,9 @@
-export const getUsers = (body) => dispatch => {
-    console.log('DIN ACTIONS')
-    fetch("/users/users", body)
+export const getProducts = (body) => dispatch => {
+    
+    fetch("/products/products", body)
         .then(res => res.json())
         .then(data => dispatch({
-            type: 'GET_USERS',
+            type: 'GET_PRODUCTS',
             payload: data
         }))
         .catch(err => { console.error(err) })

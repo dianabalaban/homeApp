@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { getUsers } from './store/actions/cityActions';
+import { getProducts } from './store/actions/productsActions';
 
 export class InvItem extends Component {
     componentDidMount() {
@@ -12,29 +12,30 @@ export class InvItem extends Component {
                 'Content-Type': 'application/json'
             }
         }
-         this.props.getUsers(head) 
+         this.props.getProducts(head) 
     }
     render() {
+        if(this.props.products) {
         return (
-            <div className="inventary">
-                {this.props.users ? this.props.users[0].username   : ''}
-               <div className="invElement">   a lot </div> 
-               <div className="buttonsWrapper">
-                    <button className="add"></button>
-                    <div className="quantity">5</div>
-                    <button className="substract"></button>
-                    <button className="remove"></button>
-               </div>
-               
+            this.props.products.map(product => (<div key={product._id} className="inventary">
+            <div className="invElement">   {product.name} </div> 
+            <div className="buttonsWrapper">
+                 <button className="add"></button>
+                 <div className="quantity">{product.quantity}</div>
+                 <button className="substract"></button>
+                 <button className="remove"></button>
             </div>
-        )
+            
+         </div>))
+            
+        ) } else return ''
     }
 }
 
 
 const mapStateToProps = (state) => {
     return {      
-        users: state.users.users,
+        products: state.products.products,
     }
 }
-export default connect(mapStateToProps, {  getUsers })(InvItem); 
+export default connect(mapStateToProps, {  getProducts })(InvItem); 

@@ -1,12 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const userModel = require('../model/accountModel');
-console.log('!!!!!!!!!!!routes')
-console.log(userModel)
-router.post('/users',
+const productModel = require('../model/productModel');
+router.post('/products',
     (req, res) => {
-
-        userModel.find()
+        productModel.find()
             .then(files => {
                 if(files)
                 res.send(files);

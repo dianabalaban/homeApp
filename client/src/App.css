@@ -23,6 +23,7 @@
 
 .invElement {
   margin-right:0.2em;
+  padding: 0.5em;
 }
 
 .add {
@@ -32,7 +33,7 @@
   width: 2em;
   background-color: inherit;
   background-size:cover;
-  margin: 0.1em 0.2em;
+  margin: 0.1em 0.6em;
   
 }
 
@@ -41,7 +42,7 @@
   background-size:cover;
   height: 2em;
   width: 2em;
-  margin: 0.1em 0.2em;
+  margin: 0.1em 0.6em;
   background-color: inherit;
   border:none;
 }
@@ -55,17 +56,18 @@
   background-size:cover;
   height: 30px;
   width: 30px;
-  margin: 0.1em 0.2em;
+  margin: 0.1em 0.1em;
   background-color: inherit;
   border:none;
 
 }
 
 .buttonsWrapper{
-  border:1px solid black;
+ 
   display:flex;
-  max-width:35%;
+  max-width:40%;
   flex-direction:row;
-  justify-content: space-between
+  justify-content: space-evenly;
+  padding: 0.4em;
 }
 

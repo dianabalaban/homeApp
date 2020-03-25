@@ -33,4 +33,4 @@ mongoose.connect(db, { useNewUrlParser: true, useCreateIndex: true })
   .then(() => console.log('connection works'))
   .catch(err => console.log(err));
 
- app.use('/users', require('./routes/users'))
+ app.use('/products', require('./routes/products'))
