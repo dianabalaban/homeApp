@@ -6,10 +6,14 @@ export class InvItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          editMode:0
+          editMode:0,
+          search:0
         }
        
     }
+    filterData = (arr, search) => {
+        return arr.filter(el => el.name.toLowerCase().includes(search.toLowerCase()) || el.notes.toLowerCase().includes(search.toLowerCase()))
+    };
     editQuantity = (event) => {
         event.preventDefault();
         
@@ -26,6 +30,7 @@ export class InvItem extends Component {
                 let clone=z[0].cloneNode(true);
                 v.innerHTML=''
                 v.appendChild(clone);
+                v.style.marginRight = "3em";
             }
           )
         } else {
@@ -34,7 +39,7 @@ export class InvItem extends Component {
             window.location.reload(false);
             document.getElementsByClassName('editMode')[0].innerHTML='View Mode'}
      
-        // z.style.backgroundColor = "red";
+        
       
     }
 
@@ -52,8 +57,23 @@ export class InvItem extends Component {
     render() {
         if(this.props.products) {
         return (
+           
             <div className='inventaryWrapper'>
-           { this.props.products.map(product => 
+           <button className="editMode" onClick={this.editQuantity}>View Mode</button> 
+           <button className="addNewButton" onClick={this.editQuantity}>Add New</button>      
+           <div><input
+                        className="searchBox"
+                        placeholder="Search here for a product..."
+                        type="text"
+                        name="name"
+                        onChange={(e) => {
+                            this.setState({ search: 1 })
+                            this.setState({ filtered_products: this.filterData(this.props.products, e.target.value) });
+                        }}>
+                    </input></div>
+           
+            {this.state.search ? 
+            this.state.filtered_products.map(product => 
                 (<div key={product._id} className="inventary">
                     <div className="invElement"> {product.name} </div> 
                     <div className="buttonsWrapper">
@@ -62,9 +82,21 @@ export class InvItem extends Component {
                         <button className="substract"></button>
                         <button className="remove"></button>
                     </div>            
-                 </div>))}
+                 </div>)) :
+                 
+                 this.props.products.map(product => 
+                    (<div key={product._id} className="inventary">
+                        <div className="invElement"> {product.name} </div> 
+                        <div className="buttonsWrapper">
+                            <button className="add"></button>
+                            <div className="quantity">{product.quantity}</div>
+                            <button className="substract"></button>
+                            <button className="remove"></button>
+                        </div>            
+                     </div>))
+                 }
 
-            <button className="editMode" onClick={this.editQuantity}>View Mode</button>     
+         
                  </div> 
                  
                  ) 
