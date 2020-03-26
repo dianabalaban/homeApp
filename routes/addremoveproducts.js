@@ -3,13 +3,13 @@ const router = express.Router();
 const productModel = require('../model/productModel');
 router.post('/addremoveproducts',
     (req, res) => {
-        productModel.find()
-            .then(files => {
-                if(files)
-                res.send(files);
-                else console.log('nu se gaseste nimic')
-
-            })
-            .catch(err => console.log(err));
+        console.log(req.body)
+        productModel.updateOne({ "_id": req.body.id },
+        { "$inc": { "quantity": req.body.qty } }, (err) => {
+            if (err) {
+               console.log(err)
+            }
+         })
+           
     });
 module.exports = router
