@@ -3,7 +3,7 @@ const router = express.Router();
 const productModel = require('../model/productModel');
 router.post('/products',
     (req, res) => {
-        productModel.find()
+        productModel.find().sort({name:1})
             .then(files => {
                 if(files)
                 res.send(files);

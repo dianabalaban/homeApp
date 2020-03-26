@@ -78,3 +78,19 @@
 .inventary:nth-child(even) {
   background: #28D6C0
 }
+
+.inventaryWrapper{
+  /* border: 1px solid black; */
+  height:100vh;
+}
+
+.editMode{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height:4em;
+  width: 8em;
+  background-color:rgb(255, 136, 0);
+  border:none;
+  font-weight:600;
+}

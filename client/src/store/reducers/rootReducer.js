@@ -3,7 +3,6 @@ import productsReducer from "./productsReducer";
 import arProductsReducer from "./ARProductsReducer"
 let rootReducer = combineReducers({
     products: productsReducer, 
-    arproducts: arProductsReducer
-   
+    arproducts: arProductsReducer   
 });
 export default rootReducer;

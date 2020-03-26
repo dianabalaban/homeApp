@@ -3,6 +3,41 @@ import { connect } from "react-redux";
 import { getProducts } from './store/actions/productsActions';
 
 export class InvItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          editMode:0
+        }
+       
+    }
+    editQuantity = (event) => {
+        event.preventDefault();
+        
+        if(this.state.editMode===0) {
+            console.log('ACUM SE POATE EDITA')
+            this.setState({editMode:1});
+            document.getElementsByClassName('editMode')[0].innerHTML='Edit Mode'
+        Array.from(document.getElementsByClassName('buttonsWrapper')).forEach(v=>
+            {
+                console.log(v);
+                let z= v.getElementsByClassName('quantity');
+                console.log(z[0]);
+                console.log(z[0].innerHTML);
+                let clone=z[0].cloneNode(true);
+                v.innerHTML=''
+                v.appendChild(clone);
+            }
+          )
+        } else {
+            console.log('acum doar se poate vedea');
+            this.setState({editMode:0}); 
+            window.location.reload(false);
+            document.getElementsByClassName('editMode')[0].innerHTML='View Mode'}
+     
+        // z.style.backgroundColor = "red";
+      
+    }
+
     componentDidMount() {
         let newcomm = {'diana': 'diana'}
         let head = {
@@ -17,18 +52,24 @@ export class InvItem extends Component {
     render() {
         if(this.props.products) {
         return (
-            this.props.products.map(product => (<div key={product._id} className="inventary">
-            <div className="invElement">   {product.name} </div> 
-            <div className="buttonsWrapper">
-                 <button className="add"></button>
-                 <div className="quantity">{product.quantity}</div>
-                 <button className="substract"></button>
-                 <button className="remove"></button>
-            </div>
-            
-         </div>))
-            
-        ) } else return ''
+            <div className='inventaryWrapper'>
+           { this.props.products.map(product => 
+                (<div key={product._id} className="inventary">
+                    <div className="invElement"> {product.name} </div> 
+                    <div className="buttonsWrapper">
+                        <button className="add"></button>
+                        <div className="quantity">{product.quantity}</div>
+                        <button className="substract"></button>
+                        <button className="remove"></button>
+                    </div>            
+                 </div>))}
+
+            <button className="editMode" onClick={this.editQuantity}>View Mode</button>     
+                 </div> 
+                 
+                 ) 
+        }
+            else return ''
     }
 }
 
