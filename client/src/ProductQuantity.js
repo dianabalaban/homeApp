@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { addRemoveProducts } from './store/actions/addRemoveProductsActions';
+import { deleteProduct } from './store/actions/removeProductActions';
 
 export class ProductQuantity extends Component {
 
@@ -48,7 +49,19 @@ export class ProductQuantity extends Component {
     }
     deleteProduct = (product_id) => event => {
         event.preventDefault();
-        console.log('DELTE');
+       
+        let databody = {id:product_id}
+        let head = {
+            method: 'POST',
+            body: JSON.stringify(databody),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+        
+        this.props.deleteProduct(head);
+        window.location.reload(false);
+
     }
 
     render() {
@@ -71,4 +84,4 @@ const mapStateToProps = (state) => {
         arproducts: state.products.products,
     }
 }
-export default connect(mapStateToProps, { addRemoveProducts })(ProductQuantity);
+export default connect(mapStateToProps, { addRemoveProducts,deleteProduct })(ProductQuantity);

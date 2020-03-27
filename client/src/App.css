@@ -1,7 +1,10 @@
 .Landing {
   display:flex;
   flex-direction:column;
-  height:100vh;  
+  height:100vh; 
+  font-size:2rem; 
+  text-align:center;
+  font-weight: 700;
 }
 
 .firstPage {
@@ -59,7 +62,6 @@
   margin: 0.1em 0.1em;
   background-color: inherit;
   border:none;
-
 }
 
 .buttonsWrapper{
@@ -96,7 +98,7 @@
   border:none;
   font-weight:600;
 }
-input {
+.searchBox {
   width:100%;
   height:3em;
 }
@@ -164,4 +166,40 @@ nav a:hover {
 .navBorder {
   border-left: none;
   width: 100%;
+}
+
+.addProductLabel{
+  display:inline-block;
+  margin:1em 0.5em;
+  font-weight:600;
+  font-size:1.3rem;
+
+}
+.inputProduct{
+  border: 1px solid black;
+  display:block;
+  width:50vh;
+  background-color:rgb(173, 236, 227)
+}
+.addNewProductBtn{
+  margin:1em 0.6em;
+  background-color:rgb(173, 236, 227);
+  font-weight:500;
+  font-size:1.2rem;
+  border:1px solid black;
+  padding:0.3em;
+}
+.newProductWrapper{
+  height:100vh;
+  background-color:#28D6C0
+}
+
+.landingPic {
+  width:100%;
+  margin-bottom:2em;
+}
+.landingheart{
+  width:50%;
+  margin:0 auto;
+  margin-top:1em;
 }

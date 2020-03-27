@@ -4,7 +4,7 @@ export class BuyList extends Component {
     render() {
         return (
             <div>
-                
+                Coming Soon...
             </div>
         )
     }

@@ -53,7 +53,7 @@ export class InvItem extends Component {
       return (
         <div className='inventaryWrapper'>
           <button className="editMode" onClick={this.editMode}>View Mode</button>
-          <button className="addNewButton" onClick={this.editMode}>Add New</button>
+          <button className="addNewButton"  onClick={() =>this.props.history.push("/addProduct")} >Add New</button>
           <div>
             <input
               className="searchBox"

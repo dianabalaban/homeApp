@@ -19,6 +19,7 @@ export class Nav extends Component {
 
                 <a href="/" className="navBorder">Home</a>
                 <a href="/products" className="navBorder">Products</a>
+                <a href="/groceries" className="navBorder">Groceries</a>
                
                 <Link to="#" className="icon" onClick={this.myFunction}>
                     <i className="fa fa-bars"></i>
