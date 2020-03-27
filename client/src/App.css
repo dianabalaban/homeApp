@@ -178,7 +178,8 @@ nav a:hover {
 .inputProduct{
   border: 1px solid black;
   display:block;
-  width:50vh;
+  width:20em;
+  height:1.5em;
   background-color:rgb(173, 236, 227)
 }
 .addNewProductBtn{
