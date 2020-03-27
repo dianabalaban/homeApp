@@ -204,3 +204,16 @@ nav a:hover {
   margin:0 auto;
   margin-top:1em;
 }
+.addNewInput {
+  width:85%;
+  height:1.5em;
+}
+
+.addGroceriesForm{
+  height:85vh;
+  border:1px solid black;
+  display:flex;
+  justify-content: space-between;
+  flex-direction:column;
+  margin:0.5em;
+}
