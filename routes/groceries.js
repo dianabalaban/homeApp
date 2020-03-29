@@ -3,7 +3,7 @@ const router = express.Router();
 const groceryModel = require('../model/groceryModel');
 router.post('/groceries',
     (req, res) => {
-        groceryModel.find().sort({name:1})
+        groceryModel.find().sort({checked:1,name:1})
             .then(files => {
                 if(files)
                 res.send(files);

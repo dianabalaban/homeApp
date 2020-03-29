@@ -38,4 +38,7 @@ mongoose.connect(db, { useNewUrlParser: true, useCreateIndex: true })
  app.use('/addnewproduct', require('./routes/addnewproduct'))
  app.use('/deleteproduct', require('./routes/removeproducts'))
  app.use('/groceries', require('./routes/groceries'))
+ app.use('/addnewgrocery',require('./routes/addnewgrocery'))
+ app.use('/deletegrocery',require('./routes/deletegrocery'))
+ app.use('/updategrocery',require('./routes/updategrocery'))
  

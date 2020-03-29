@@ -217,3 +217,10 @@ nav a:hover {
   flex-direction:column;
   margin:0.5em;
 }
+.groceryElement{
+  display:block;
+  margin:0.2em 0.6em;
+}
+.checked{
+  text-decoration: line-through;
+}

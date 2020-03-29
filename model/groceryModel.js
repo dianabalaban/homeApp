@@ -6,6 +6,9 @@ const grocerySchema = new mongoose.Schema({
         index: {unique: true, dropDups: true},
         required: true,
     },
+    checked: {
+        type: Boolean
+    },
 })
 
 module.exports = mongoose.model('groceries', grocerySchema);
