@@ -3,7 +3,7 @@ const router = express.Router();
 const productModel = require('../model/productModel');
 router.post('/addremoveproducts',
     (req, res) => {
-        console.log(req.body)
+       
         productModel.updateOne({ "_id": req.body.id },
         { "$inc": { "quantity": req.body.qty } }, (err) => {
             if (err) {

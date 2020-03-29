@@ -3,7 +3,7 @@ const router = express.Router();
 const groceryModel = require('../model/groceryModel');
 router.post('/updategrocery',
     (req, res) => {
-        console.log(req.body)
+        
         groceryModel.updateOne({ "_id": req.body.id },
         { "checked": req.body.checked } , (err) => {
             if (err) {

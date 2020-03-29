@@ -69,7 +69,7 @@ export class BuyList extends Component {
                 <form onSubmit={this.handleSubmit} className='addGroceriesForm'>
                   
                     <div>
-                        <button onClick={this.deleteSelected}>Clear Selected</button>
+                        <button className='clearSelected' onClick={this.deleteSelected}>Clear Selected</button>
                         {this.props.groceries.groceries.map(element => (
                             <GroceryItem id={element._id} name={element.name} key={element._id} checked={element.checked}></GroceryItem>
                           
@@ -80,7 +80,7 @@ export class BuyList extends Component {
                     
                     <div>
                         <input type="text" value={this.nameIn} onChange={this.nameChange} className='addNewInput' required />
-                        <input type="submit" className="" value="Add" />
+                        <input type="submit" className="addGrocery" value="Add" />
                     </div>
                 </form>
             )

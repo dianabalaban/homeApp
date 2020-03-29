@@ -207,20 +207,42 @@ nav a:hover {
 .addNewInput {
   width:85%;
   height:1.5em;
+  margin-left:0.5em;
+  margin-bottom:0.3em;
+  font-size:1.4rem;
 }
 
 .addGroceriesForm{
-  height:85vh;
+  height:90vh;
   border:1px solid black;
   display:flex;
   justify-content: space-between;
   flex-direction:column;
-  margin:0.5em;
+  background-color: rgba(142, 218, 207, 0.74)
 }
 .groceryElement{
   display:block;
   margin:0.2em 0.6em;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 .checked{
   text-decoration: line-through;
+}
+.clearSelected{
+  margin-left:0.5em;
+  margin-top:0.2em;
+  background-color: #28D6C0;
+  padding:0.5em;
+  border:1px solid black;
+  font-weight: 500;
+}
+
+.addGrocery{
+  margin-left:0.2em;
+  margin-top:0.2em;
+  background-color: #28D6C0;
+  padding:0.3em;
+  border:1px solid black;
+  font-weight: 500;
 }
